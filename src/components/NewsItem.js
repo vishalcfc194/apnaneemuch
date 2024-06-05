@@ -16,24 +16,26 @@ const NewsItem = ({ title, date, description }) => {
       : description;
 
   return (
-    <Card>
-      <CardContent>
-        <Typography variant="h5" component="div">
-          {title}
-        </Typography>
-        <Typography color="text.secondary" gutterBottom>
-          {date}
-        </Typography>
-        <Typography variant="body2">
-          {expanded || !isMobile ? description : truncatedDescription}
-        </Typography>
-        {isMobile && (
-          <Button size="small" onClick={toggleExpand}>
-            {expanded ? "Read Less" : "Read More"}
-          </Button>
-        )}
-      </CardContent>
-    </Card>
+    <CardContent>
+      <Typography variant="h5" component="div" sx={{ color: "red" }}>
+        {title}
+      </Typography>
+      <Typography
+        color="text.secondary"
+        gutterBottom
+        sx={{ fontWeight: "bold" }}
+      >
+        {date}
+      </Typography>
+      <Typography variant="body2">
+        {expanded || !isMobile ? description : truncatedDescription}
+      </Typography>
+      {isMobile && (
+        <Button size="small" onClick={toggleExpand}>
+          {expanded ? "Read Less" : "Read More"}
+        </Button>
+      )}
+    </CardContent>
   );
 };
 
